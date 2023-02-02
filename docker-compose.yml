@@ -50,8 +50,18 @@ services:
     networks:
       - app-tier
     container_name: servicio_web_app
-  
-    
+
+  redis-service:
+    restart: always
+    build: ./redis
+    ports:
+      - 6379:6379
+    networks:
+      - app-tier
+    container_name: redis_service
+
+
+
 networks:
   app-tier:
     driver: bridge     
