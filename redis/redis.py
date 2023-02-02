@@ -8,8 +8,8 @@ redis = Redis(host='redis',port=6379)
 
 @app('/',methods=['GET'])
 def obtener(): 
-    redis.incr('hits')
-    counter = str(redis.get('hits','utf-8'))
+    redis.incr('rainbow_database')
+    counter = str(redis.get('rainbow_database','utf-8'))
 
     return "Conexion Exitosa"+counter+"times"
 
